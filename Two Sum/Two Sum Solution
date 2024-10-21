@@ -1,0 +1,21 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        # Create a dictionary to store the value and its index
+        num_dict = {}
+        
+        # Loop through the array
+        for i, num in enumerate(nums):
+            # Calculate the difference between the target and current number
+            diff = target - num
+            
+            # If the difference is already in the dictionary, return the indices
+            if diff in num_dict:
+                return [num_dict[diff], i]
+            
+            # Otherwise, store the current number with its index
+            num_dict[num] = i  
